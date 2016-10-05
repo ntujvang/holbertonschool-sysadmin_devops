@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod -R a=rw,+X
+chmod -R ugo+X
