@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo_uid
+SUDO_UID
