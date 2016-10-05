@@ -1,2 +1,4 @@
 #!/bin/bash
-su chown betty /hello exit
+su 
+chown betty /hello 
+exit
