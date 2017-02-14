@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# This script checks to see if holbertonschool file exists and if it is either
+# empty, not empty, regular file, or not regular
+file="holbertonschool"
+if [ -e $file ]
+then
+    echo $file file exists
+    if [ -s $file ]
+    then
+	echo $file file is not empty
+	if [ -f $file ]
+	then
+            echo $file is a regular file
+	fi
+    else
+	echo $file file is empty
+	if [ -f $file ]
+	then
+      	    echo $file is a regular file
+	fi
+    fi
+else
+    echo $file file does not exist
+fi
