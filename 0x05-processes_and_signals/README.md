@@ -1,0 +1,1 @@
+Processes and signals! Bash exercise on ps/pgrep/kill/pkill and trap!!
