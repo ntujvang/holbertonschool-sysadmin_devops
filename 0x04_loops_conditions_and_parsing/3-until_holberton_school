@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-# This script displays "Holberton School" 10 times with until
-i=9
-until [ $i -lt 0 ]
-do
-    echo Holberton School
-    let i-=1
-done
