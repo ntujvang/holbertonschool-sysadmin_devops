@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Script to connect to server via ssh
+ssh 54.89.103.152
