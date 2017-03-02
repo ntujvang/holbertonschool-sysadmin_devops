@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Script that redirects to 404
+sudo apt-get install -y nginx
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
+string="error_page 404 /custom_404.html;\\n location = /custom_404.html {\\n root /usr/share/nginx/html;\\n internal;\\n}"
+mine="#error_page 404 /404.html;"
+loc="/etc/nginx/sites-enabled/default"
+sudo sed -i "26i $string" $loc
+sudo service nginx start

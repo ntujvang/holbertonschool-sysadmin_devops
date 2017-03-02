@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Script redirects to "301 Moved Permanently"
+sudo apt-get install -y nginx
+string="rewrite ^/redirect_me https://www.holbertonschool.com permanent;"
+loc="/etc/nginx/sites-enabled/default"
+sudo sed -i "26i $string" $loc
+sudo service nginx start
