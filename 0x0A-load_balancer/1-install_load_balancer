@@ -2,7 +2,9 @@
 # This script installs HAProxy and sets it up for web01 and web02
 sudo apt-get update
 sudo apt-get -y install haproxy
-sudo sed -i "s/ENABLED=0/ENABLED=1/" /etc/default/haproxy
+sudo sed -i 's/ENABLED=0/ENABLED=1/' /etc/default/haproxy
 sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.backup
-sudo sed -i -e "$a\listen appname 0.0.0.0:80\n\tmode http\n\tbalance roundrobin\n\toption httpclose\n\toption forwardfor\n\tserver 96-web-01 54.89.103.152:80 check\n\tserver 96-web-02 54.91.31.60:80 check\n" /etc/haproxy/haproxy.cfg
+sudo sed -i -e '$a\listen appname 0.0.0.0:80\n\tmode http\n' /etc/haproxy/haproxy.cfg
+sudo sed -i -e '$a\\tbalance roundrobin\n\toption httpclose\n\toption forwardfor' /etc/haproxy/haproxy.cfg
+sudo sed -i -e '$a\\tserver 96-web-01 54.89.103.152:80\n\tserver 96-web-02 54.91.31.60:80' /etc/haproxy/haproxy.cfg
 sudo service haproxy start
