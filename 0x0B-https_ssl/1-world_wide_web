@@ -3,7 +3,7 @@
 # if no arguments are given it'll list all known sub domains
 print_line()
 {
-    echo -ne "The subdomain $i is a "
+    echo -ne "The subdomain $2 is a "
     dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | awk 'FNR == 2 {printf $4}'
     echo -ne " record and points to "
     dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | awk 'FNR == 2 {print $5}'
