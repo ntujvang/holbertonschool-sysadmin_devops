@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Script that tells where each subdoman is located and what type it is
+# if no arguments are given it'll list all known sub domains
+print_line()
+{
+    echo -ne "The subdomain $i is a "
+    dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | awk 'FNR == 2 {printf $4}'
+    echo -ne " record and points to "
+    dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | awk 'FNR == 2 {print $5}'
+}
+
+if [ $# -lt 2 ]
+then
+    for i in "www" "lb-01" "web-01" "web-02"
+    do
+	print_line "$1" "$i"
+    done
+else
+    print_line "$1" "$2"
+fi
