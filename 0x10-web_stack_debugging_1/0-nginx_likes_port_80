@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 # Script that sets nginx to port 80
-op="$(sudo netstat -lpn | grep :80 | cut -d'/' -f1 | rev | cut -d' ' -f1 | rev)"
-sudo kill $op
-sudo sed -i '21 s/8080/80/' /etc/nginx/sites-enabled/default
+sudo sed -i 's/8080/80/' /etc/nginx/sites-enabled/default
 sudo service nginx restart
