@@ -3,6 +3,6 @@
 # Script that launches nginx as user - nginx
 wget https://raw.githubusercontent.com/ntujvang/holbertonschool-sysadmin_devops/master/0x11-web_stack_debugging_2/nginx.conf
 mv nginx.conf /etc/nginx/nginx.conf
-sudo chown -R nginx /var/log/nginx /etc/nginx /usr/share/nginx
+sudo chown -R nginx /var/log/nginx /etc/nginx
 pkill apache2
 su nginx -c nginx
