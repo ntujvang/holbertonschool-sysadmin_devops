@@ -1,0 +1,1 @@
+a blog about what happens when you type holbertonschool.com
