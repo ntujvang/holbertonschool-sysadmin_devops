@@ -25,4 +25,4 @@ if __name__ == "__main__":
 
     print("Employee {} is done with tasks({}/{}):".format(usr, done, total))
     for name in tasks:
-        print("\t{}".format(name))
+        print("\t {}".format(name))

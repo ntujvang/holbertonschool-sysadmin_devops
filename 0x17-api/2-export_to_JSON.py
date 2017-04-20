@@ -3,9 +3,9 @@
 Script uses a Rest API to retrieve todo list
 -exports data into JSON format
 """
+import json
 import requests
 import sys
-import json
 
 
 if __name__ == "__main__":
