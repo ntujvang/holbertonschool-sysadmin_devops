@@ -23,6 +23,6 @@ if __name__ == "__main__":
             tasks.append(task.get("title"))
         total += 1
 
-    print("Employee {} is done with tasks({:d}/{:d}):".format(usr, done, total))
+    print("Employee {} is done with tasks({}/{}):".format(usr, done, total))
     for name in tasks:
-        print("\t {}".format(name))
+        print("\t{}".format(name))
