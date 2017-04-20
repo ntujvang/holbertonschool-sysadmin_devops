@@ -9,7 +9,7 @@ import sys
 if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/users/" + sys.argv[1]
     r = requests.get(url)
-    result = dict(r.json())
+    result = r.json()
     usr = result.get("name")
 
     url = "https://jsonplaceholder.typicode.com/todos?userId=" + sys.argv[1]
